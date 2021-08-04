@@ -40,4 +40,10 @@ private MockGameDAO mockDAO;
 		return mockDAO.updateGame(game);
 	}
 
+	@Override
+	public List<Game> retrieveAllGamesByGenre() {
+	
+		return mockDAO.updateGame(game);
+	}	
+
 }

@@ -17,5 +17,7 @@ public interface GameService {
 
 	Game updateGame(Game game);
 
+	List<Game> retrieveAllGamesByGenre();
+
 
 }

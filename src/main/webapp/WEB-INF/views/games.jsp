@@ -64,6 +64,7 @@
                                 <input data-ng-if="!ctrl.game.id" type="submit" value="Add" class="btn btn-primary btn-sm"style= "background-color: blue">
                                 <button data-ng-if="ctrl.game.id" data-ng-click="ctrl.updateGame()" class="btn btn-primary btn-sm" type= "button" style= "background-color: blue">Submit Update</button>
                                 <button data-ng-if="ctrl.game"data-ng-click="ctrl.clearForm()" class="btn btn-secondary btn-sm" type= "reset" style ="background-color: blue">Clear</button>
+                                <select data-ng-if="!ctrl.game.genre" class="form-control" id="dropdown" onClick = "fetchAllGamesByGenre()"></select>
                             </div>
                         </div>
                     </form>

@@ -1,5 +1,7 @@
 package com.organization.mvcproject.app.model;
 
+import java.util.Collection;
+
 import org.springframework.stereotype.Component;
 
 

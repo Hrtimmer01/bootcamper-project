@@ -18,6 +18,12 @@ angular.module('GameApp').controller('GameController',
 					self.games = data;
 				});
 			}
+			self.fetchAllGamesByGenre = function(){
+				if(dropdown != null)
+				GameService.fetchAllGamesByGenre().then(function(data) {
+					self.games = data;
+				});
+			}
            
 			self.addGame = function(){
 		   return GameService.createGame(self.game).then( function() {

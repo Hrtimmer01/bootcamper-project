@@ -43,6 +43,10 @@ public class GameController {
 	public ResponseEntity<List<Game>> fetchAllGames() {
 		return new ResponseEntity<List<Game>>(gameService.retrieveAllGames(), HttpStatus.OK);
 	}
+	@GetMapping(value = "games/getAllByGenre")
+	public ResponseEntity<List<Game>> fetchAllGamesByGenre() {
+		return new ResponseEntity<List<Game>>(gameService.retrieveAllGamesByGenre(), HttpStatus.OK);
+	}
 
 	@PostMapping(value = "games/createGame", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> createGame(@RequestBody GameImpl game) {

@@ -1,6 +1,7 @@
 package com.organization.mvcproject.app.mockdao;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -17,6 +18,7 @@ public class MockGameDAO {
 	private static Long gameId = new Long(0);
 	private static Long companyId = new Long(0);
 	private static List<GameImpl> games = new ArrayList<>();
+	private static List<GameImpl> gamesByGenre = new LinkedList<>();
 	//Create, read, update,delete
 
 	static {
@@ -50,7 +52,6 @@ public class MockGameDAO {
 	public List<Game> retrieveAllGames() {
 		return ImmutableList.copyOf(games);
 	}
-
 	
 	public Game saveGame(Game game) {
 		game.setId(++gameId);
@@ -79,10 +80,16 @@ public class MockGameDAO {
 				   return true;
 			   }
 		   }
+	   
 				return false; 
-	}
-			
-	}
+	      
+
+		for(GameImpl game : games) {
+			gamesByGenre.setAll(game.getGenre());
+		
+		}
+	
+
 	
 	
 
